@@ -1,0 +1,14 @@
+/Users/cristianayalafernandez/ositos_gominola/New Unity Project/Temp/bin/Debug/UnityEngine.dll
+/Users/cristianayalafernandez/ositos_gominola/New Unity Project/Temp/bin/Debug/UnityEditor.dll
+/Users/cristianayalafernandez/ositos_gominola/New Unity Project/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/cristianayalafernandez/ositos_gominola/New Unity Project/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/cristianayalafernandez/ositos_gominola/New Unity Project/Temp/bin/Debug/UnityEngine.Analytics.dll
+/Users/cristianayalafernandez/ositos_gominola/New Unity Project/Temp/bin/Debug/Mono.Cecil.dll
+/Users/cristianayalafernandez/ositos_gominola/New Unity Project/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/cristianayalafernandez/ositos_gominola/New Unity Project/Temp/bin/Debug/Unity.DataContract.dll
+/Users/cristianayalafernandez/ositos_gominola/New Unity Project/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/cristianayalafernandez/ositos_gominola/New Unity Project/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/cristianayalafernandez/ositos_gominola/New Unity Project/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/cristianayalafernandez/ositos_gominola/New Unity Project/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/cristianayalafernandez/ositos_gominola/New Unity Project/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/cristianayalafernandez/ositos_gominola/New Unity Project/Temp/bin/Debug/Mono.Cecil.Mdb.dll
