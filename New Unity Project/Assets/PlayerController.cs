@@ -5,12 +5,13 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	private Rigidbody rb;
-    public int velocity;
+    public int time;
     private int count;
     public Text countText;
     public Text winText;
     private Vector2 startPos;
-    private Vector2 paola_pos;
+    private Vector2 final_pos;
+  
 
 
     void Start () {
@@ -23,37 +24,34 @@ public class PlayerController : MonoBehaviour {
 void FixedUpdate()
 {
     if (Input.touchCount > 0)
-            winText.text = "tocáhte";
         {
+            Touch touch = Input.GetTouch(0);
+            winText.text = "tocado y hundido";
 
-        Touch touch = Input.touches[0];
-
-
-
-        switch (touch.phase)
+            switch (touch.phase)
 
         {
 
-            case TouchPhase.Began:
+                case TouchPhase.Began:
+                    startPos = touch.position;
+                    final_pos = touch.position;
+                    time = 0;
+                    break;
+                case TouchPhase.Moved:
+                    final_pos = touch.position;
+                    ++time;
+                    break;
+            }
+            winText.text = "i = " + time.ToString();
+            float swipeDistVertical = final_pos.y - startPos.y;
 
-                startPos = touch.position;
+            float swipeDistHorizontal = final_pos.x - startPos.x;
 
-                break;
+            Vector3 movement = new Vector3(swipeDistVertical, 0.0f, swipeDistVertical);
+
+            rb.AddForce(movement * time / 100);
+
         }
-            int gabri = 0;
-            while (touch.phase != TouchPhase.Ended) {
-                paola_pos = touch.position;
-                ++gabri;
-            } //endededed
-            winText.text = "i = " + gabri.ToString();
-            float swipeDistVertical = paola_pos.y - startPos.y;
-
-        float swipeDistHorizontal = paola_pos.x - startPos.x;
-
-        Vector3 movement = new Vector3(swipeDistVertical, 0.0f, swipeDistVertical);
-
-        rb.AddForce(movement * gabri/100);
-    }
 }
     void OnTriggerEnter(Collider other)
     {
