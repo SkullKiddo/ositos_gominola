@@ -9,26 +9,52 @@ public class PlayerController : MonoBehaviour {
     private int count;
     public Text countText;
     public Text winText;
+    private Vector2 startPos;
+    private Vector2 paola_pos;
 
 
-
-	void Start () {
+    void Start () {
 		rb = GetComponent<Rigidbody>();
         winText.text = "";
         count = 0;
         SetCountText();
 	}
 
-    void FixedUpdate()
-    {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+void FixedUpdate()
+{
+    if (Input.touchCount > 0)
+            winText.text = "tocáhte";
+        {
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        Touch touch = Input.touches[0];
 
-        rb.AddForce(movement * velocity);
+
+
+        switch (touch.phase)
+
+        {
+
+            case TouchPhase.Began:
+
+                startPos = touch.position;
+
+                break;
+        }
+            int gabri = 0;
+            while (touch.phase != TouchPhase.Ended) {
+                paola_pos = touch.position;
+                ++gabri;
+            } //endededed
+            winText.text = "i = " + gabri.ToString();
+            float swipeDistVertical = paola_pos.y - startPos.y;
+
+        float swipeDistHorizontal = paola_pos.x - startPos.x;
+
+        Vector3 movement = new Vector3(swipeDistVertical, 0.0f, swipeDistVertical);
+
+        rb.AddForce(movement * gabri/100);
     }
-
+}
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("PickUp"))
