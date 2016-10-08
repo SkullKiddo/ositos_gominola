@@ -22,38 +22,29 @@ public class PlayerController : MonoBehaviour {
 
 void FixedUpdate()
 {
-    if (Input.touchCount > 0)
+
+        winText.text = "polla";
+        if (Input.touchCount > 0)
+        {
+
             winText.text = "tocáhte";
-        {
 
-        Touch touch = Input.touches[0];
-
-
-
-        switch (touch.phase)
-
-        {
-
-            case TouchPhase.Began:
-
-                startPos = touch.position;
-
-                break;
-        }
+            if (Input.GetTouch(0).phase == TouchPhase.Began)startPos = Input.GetTouch(0).position;
             int gabri = 0;
-            while (touch.phase != TouchPhase.Ended) {
-                paola_pos = touch.position;
+            while (Input.GetTouch(0).phase != TouchPhase.Ended) {
+                paola_pos = Input.GetTouch(0).position;
                 ++gabri;
             } //endededed
-            winText.text = "i = " + gabri.ToString();
+            winText.text = "i = "; // + gabri.ToString();
             float swipeDistVertical = paola_pos.y - startPos.y;
 
-        float swipeDistHorizontal = paola_pos.x - startPos.x;
+            float swipeDistHorizontal = paola_pos.x - startPos.x;
 
         Vector3 movement = new Vector3(swipeDistVertical, 0.0f, swipeDistVertical);
 
-        rb.AddForce(movement * gabri/100);
+        rb.AddForce(movement * movement.magnitude/(gabri));
     }
+       // winText.text = "cosas";
 }
     void OnTriggerEnter(Collider other)
     {
