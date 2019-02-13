@@ -1,2 +1,2 @@
 # ositos_gominola
-Esta es la mierda de la hack upc de ositos de gominola team 
+failed attempt of a team unity game (hamstell ball style) at the 2016 Hackathon at UPC
